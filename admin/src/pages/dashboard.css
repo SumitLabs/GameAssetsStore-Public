@@ -1,0 +1,30 @@
+.dashboard {
+  margin: 14px;
+}
+
+.recent_uploads{
+  margin: 60px 0;
+  padding: 9px;
+  width: 90%;
+  background-color: var(--Primary-light-color);
+}
+.recent_uploads>h3{
+margin: 18px 0;
+}
+
+@media only screen and (max-width: 768px){
+.assets_count{
+flex-wrap: wrap;
+gap: 12px;
+justify-content: start !important;
+}
+.recent_uploads{
+  width: 100%;
+}
+}
+@media only screen and (max-width: 463px){
+.assets_count{
+  justify-content: center !important;
+}
+
+}

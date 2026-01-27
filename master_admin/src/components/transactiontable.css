@@ -1,0 +1,17 @@
+.transaction_table > tbody > tr > td > button {
+  margin: 0 6px;
+  border: none;
+  outline: none;
+  width: 70px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--secondary-light-color);
+  height: 25px;
+  border-radius: 6px;
+}
+.transaction_table > tbody > tr > td >.admin_btn{
+background-color: var(--secondary-light-color);
+}
+.transaction_table > tbody > tr > td >.user_btn{
+    background-color: var(--ternary-color);
+}

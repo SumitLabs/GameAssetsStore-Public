@@ -1,0 +1,23 @@
+/* Bullet container */
+.swiper-pagination {
+  bottom: 0px !important;
+  position: relative;
+  margin-top: 40px; 
+}
+
+/* Default bullet */
+.swiper-pagination-bullet {
+  background: #555;
+    
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Active bullet */
+.swiper-pagination-bullet-active {
+  background: var(--ternary-color);
+  width: 22px;
+  border-radius: 10px;
+}

@@ -1,0 +1,7 @@
+.transaction {
+  margin: 14px;
+}
+.transactions{
+    padding: 12px;
+    background-color: var(--Primary-light-color);
+}

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap");
+
+.counter_section {
+  width: 100%;
+  padding: 80px 40px;
+  gap: 60px;
+  background: radial-gradient(circle at top, #0f1318, #06080b);
+  flex-wrap: wrap;
+}
+
+/* CIRCLE CARD */
+.counter_circle {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.4)
+  );
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+  transition: all 0.4s ease;
+}
+
+.counter_circle:hover {
+  transform: scale(1.05);
+  background-color: #ffffff;
+}
+.counter_circle:hover .counter_number{
+  color: var(--ternary-color);
+}
+.counter_circle:hover .counter_label{
+  color: var(--ternary-color);
+}
+
+/* CONTENT */
+.counter_content {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+}
+
+/* NUMBER */
+.counter_number {
+  font-size: 58px;
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+  letter-spacing: 2px;
+}
+
+
+/* LABEL */
+.counter_label {
+  margin-top: 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .counter_section {
+    gap: 40px;
+  }
+
+  .counter_circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .counter_number {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .counter_section {
+    flex-direction: column;
+  }
+
+  .counter_circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .counter_number {
+    font-size: 44px;
+  }
+}

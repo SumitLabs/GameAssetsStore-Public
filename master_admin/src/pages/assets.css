@@ -1,0 +1,9 @@
+.assets {
+  width: 90%;
+}
+
+.assets > .upload {
+  margin: 14px;
+  background-color: var(--Primary-light-color);
+  padding: 12px;
+}

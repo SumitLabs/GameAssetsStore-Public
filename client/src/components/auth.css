@@ -1,0 +1,156 @@
+.auth{
+  height: 100%;
+}
+.auth_reverse{
+flex-direction: row-reverse;
+}
+.auth_inverse{
+  flex-direction: row;
+}
+.left_auth,.right_auth{
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+.left_auth{
+  text-align: center;
+}
+.left_auth p{
+  padding: 23px 40px;
+  margin: 0px 40px;
+  color: var(--text-color-secondary);
+}
+.error{
+  color: var(--ternary-color);
+
+}
+.A_logo{
+  position: absolute;
+  top: 4%;
+  left: 4%;
+}
+.auth_header{
+  position: absolute;
+  top: 4%;
+  left: 4%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.toggle_form button{
+  background-color: var(--Primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  font-size: 1rem;
+  padding: 0px 6px;
+
+}
+.A_logo >span{
+    color: var(--ternary-color);
+}
+.auth_form {
+  margin: auto;
+}
+
+.auth_form input[type="submit"] {
+    background-color: var(--Primary-color);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    font-size: 1rem;
+    padding: 0px 6px;
+    width: 130px;
+    margin: 12px 0;
+}
+.auth_form .row{
+    position: relative;
+}
+.auth_form .row input {
+  outline: none;
+  width: 80%;
+  height: 40px;
+  margin: 6px 0;
+  background-color: var(--Primary-color);
+  border: none;
+  padding: 0 26px;
+  color: var(--text-color);
+  font-size: 1rem;
+  
+}
+.auth_form .row svg{
+position: absolute;
+top: 35%;
+left: 1%;
+}
+.auth_form > .row > span> .input_icon_eye {
+  position: absolute;
+  left: 70%;        /* right side inside input */
+  top: 35%;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+.auth_mobile_toggle{
+  display: none;
+}
+@media only screen and (max-width: 768px){
+.left_auth p {
+    padding: 23px 0px;
+    margin: 0px 40px;
+}
+.auth_header{
+  font-size: 1.5rem;
+}
+
+}
+@media only screen and (max-width: 426px){
+  .auth{
+
+    width: 100%;
+    flex-direction: column-reverse;
+    justify-content: center !important;
+    align-items: start !important;
+  }
+  .auth_form > .row > span> .input_icon_eye {
+  position: absolute;
+  left: 90%;        
+  top: 35%;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+.toggle_form{
+ display: none;
+}
+.right_auth{
+margin-top: 55px;
+width: 100%;
+
+}
+.A_logo{
+ display: none;
+}
+.auth_header{
+  position: absolute;
+  top: -10%;
+  text-align: center;
+  font-size: 2rem;
+}
+.auth_form{
+margin-top:90px ;
+}
+.auth_form .row input {
+  width: 100%;
+}
+.auth_mobile_toggle{
+  display: block;
+  text-align: center;
+  margin: 12px 0;
+}
+.auth_form input[type="submit"] {
+    width: 100%;
+}
+}

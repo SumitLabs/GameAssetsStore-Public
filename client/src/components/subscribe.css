@@ -1,0 +1,70 @@
+.subscribe_section {
+  height: 30vh;
+  position: relative;
+  margin: 6px 0;
+  width: 100%;
+  z-index: 8;
+}
+.subscribe_section::before {
+  content: "";
+  background: url("../assets/newsletter-bg.jpg");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 30vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.subscribe_headning {
+  width: 30%;
+}
+
+.subscribe_headning h3 {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.subscribe_letter form input[type="email"] {
+  height: 50px;
+  width: 500px;
+  outline: none;
+  border: none;
+ 
+  
+   padding-right:160px ;
+   padding-left:12px ;
+  font-size: 18px;
+  margin: 12px 0;
+}
+.subscribe_letter form input[type="submit"] {
+  height: 40px;
+  margin-left: -148px;
+  background-color: var(--Primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .subscribe_section {
+    flex-direction: column;
+    width: 100%;
+    align-items: start !important;
+    justify-content: center !important;
+  }
+  .subscribe_headning {
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+ 
+  .subscribe_headning {
+    width: 100%;
+    
+  }
+  .subscribe_letter form input[type="email"] {
+    width: 300px;
+  }
+}

@@ -1,0 +1,41 @@
+.header_section {
+  height: 40vh;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--Primary-light-color);
+}
+
+.header_section h3 {
+  font-size: 2.6rem;
+  z-index: 2;
+  position: relative;
+}
+
+.header_section p {
+  z-index: 2;
+  position: relative;
+  margin-top: 8px;
+}
+
+.header_section>.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.header_section>.img > img {
+  width: 100%;          
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.3;       
+}

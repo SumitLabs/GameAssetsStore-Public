@@ -1,0 +1,40 @@
+/* Wrapper handles overflow */
+.table-wrapper {
+  width: 100%;
+}
+
+/* Table styles */
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header */
+.responsive-table thead {
+  background-color: #701e1e;
+  height: 40px;
+}
+
+.responsive-table th {
+  text-transform: uppercase;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+/* Body */
+.responsive-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--text-color-secondary);
+  white-space: nowrap;
+}
+
+/* ✅ Mobile Fix */
+@media (max-width: 463px) {
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .responsive-table {
+    min-width: 600px; /* Forces horizontal scroll */
+  }
+}

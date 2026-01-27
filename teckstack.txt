@@ -1,0 +1,60 @@
+----------- 3D Game Asset Marketplace --------------------
+
+Stack: MERN + Three.js + Stripe + Cloudinary + Admin Panel
+Features:
+
+Upload, preview, and sell 3D assets (.glb/.fbx)
+
+3D model viewer using Three.js
+
+Cart, license types, subscription plans
+
+Admin dashboard to manage assets & users
+
+
+
+
+Frontend: React.js,CSS, Three.js, React Three Fiber, Redux
+
+Backend:  Node.js, Express.js, MongoDB
+
+Cloud Service:
+  Cloudinary (for 3D asset/image uploads)
+  Stripe (for payments & subscriptions)
+
+Auth: JWT + bcrypt (or Firebase Auth if preferred)
+
+Admin Dashboard: React Admin / Custom Admin Panel
+
+Deployment: Vercel/Netlify (frontend) + Render/VPS (backend)
+
+
+Feature Modules Breakdown
+1. User Side
+Register/Login with email (optional: Google OAuth)
+
+Browse assets (grid/list view)
+
+View asset details (Three.js 3D model preview)
+
+Add to Cart / Purchase / Download
+
+Licensing info per asset (Commercial, Personal, Extended)
+
+Subscription system (monthly download limit via Stripe)
+
+2. Creator Side
+Upload 3D assets (.glb, .fbx) with preview images
+
+Add description, tags, pricing, license type
+
+Track downloads, earnings, feedback
+
+3. Admin Panel
+Manage users, assets, transactions
+
+Block/unblock users or content
+
+View total revenue, reports
+
+Approve/reject new uploads (optional moderation flow)

@@ -1,0 +1,22 @@
+.card {
+  height: 140px;
+  width: 230px;
+  background-color: var(--Primary-light-color);
+  border: 2px solid var(--Primary-light-color);
+}
+
+.card :first-child {
+  height: 90px;
+}
+
+.card :first-child > .num,
+.card :first-child > .icon {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.card > .title {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 12px;
+}

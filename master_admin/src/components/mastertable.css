@@ -1,0 +1,24 @@
+
+.master_table tbody tr td:last-child button {
+  margin: 0 6px;
+  border: none;
+  outline: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+}
+
+.master_table tbody tr td:last-child button:first-child {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.master_table tbody tr td:last-child button:last-child {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.master_table tbody tr td:last-child button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+}

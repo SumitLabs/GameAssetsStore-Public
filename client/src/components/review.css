@@ -1,0 +1,149 @@
+.review_section {
+ height: 70vh;
+ /* background-color: aqua; */
+}
+
+
+/* CARD STACK */
+.card_stack {
+  position: relative;
+  width: 480px;
+  height: 260px;
+   z-index: 10;
+}
+
+.review_card {
+  position: absolute;
+  width: 100%;
+  padding: 26px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #141820, #0b0d12);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  transition: all 0.6s ease;
+}
+
+/* POSITIONS */
+.pos_0 {
+  z-index: 3;
+  transform: translateY(0) rotate(0deg) scale(1);
+}
+
+.pos_1 {
+  z-index: 2;
+  transform: translateY(16px) rotate(-5deg) scale(0.96);
+  opacity: 0.75;
+}
+
+.pos_2 {
+  z-index: 1;
+  transform: translateY(32px) rotate(5deg) scale(0.92);
+  opacity: 0.45;
+}
+
+/* CARD CONTENT */
+.card_header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card_header img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.card_header h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card_header span {
+  font-size: 16px;
+  color: #aaa;
+}
+
+.stars {
+  margin-left: auto;
+  color: gold;
+}
+
+.review_text {
+  margin-top: 23px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #ccc;
+}
+
+/* RIGHT SIDE */
+.review_side {
+  text-align: right;
+}
+
+.big_number {
+  font-size: 84px;
+  color: var(--ternary-color);
+  font-weight: 800;
+}
+
+.review_side h3 {
+  letter-spacing: 2px;
+}
+.review_slider{
+  z-index: 10;
+}
+
+
+.review_slider {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.review_card {
+  cursor: grab;
+  transition: transform 0.2s;
+}
+
+.review_card:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+.happy_client{
+  position: relative;
+}
+.happy_client::before{
+  position: absolute;
+  content: "";
+  background: url('../assets/img02.png');
+  height: 600px;
+  width: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: -225%;
+  right: 0%;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 768px){
+ .clients{
+  font-size: 2rem;
+}
+.review_section{
+  justify-content: end !important;
+}
+.review_slider{
+  z-index: 100;
+}
+}
+@media only screen and (max-width: 425px){
+  .card_stack{
+    width: 300px !important;
+  }
+.review_section{
+  flex-direction: column-reverse;
+}
+.happy_client::before{
+  right: 0%;
+}
+}
