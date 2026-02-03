@@ -1,0 +1,77 @@
+/* Share List */
+.share_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.share_list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: 10px;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+.share_list li > span {
+  margin-top: 6px;
+}
+
+.share_list li:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}
+
+/* Icon colors */
+.facebook {
+  color: #1877f2;
+}
+.instagram {
+  color: #e1306c;
+}
+.twitter {
+  color: #1da1f2;
+}
+.messenger {
+  color: #0084ff;
+}
+.whatsapp {
+  color: #25d366;
+}
+.telegram {
+  color: #0088cc;
+}
+
+/* Copy link box */
+.copy_link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.copy_link input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.copy_btn {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.copy_btn:hover {
+  background: var(--overlay-color);
+}

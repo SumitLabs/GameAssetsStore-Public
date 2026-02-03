@@ -16,7 +16,7 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
 
       <div className="search">
         <form>
-          <input type="text" placeholder="Search" className="round" />
+          <input type="search" placeholder="Search" className="round" />
           <FaSearch />
         </form>
       </div>

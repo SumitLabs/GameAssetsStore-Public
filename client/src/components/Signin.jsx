@@ -7,11 +7,11 @@ import { useState } from "react";
 import "./auth.css";
 
 const Signin = () => {
-  const [close,setClose]=useState(true);
-  
-  let handleChangetype=()=>{
+  const [close, setClose] = useState(true);
+
+  let handleChangetype = () => {
     setClose(!close);
-  }
+  };
   const [Signin, setSignin] = useState({
     username: "",
     email: "",
@@ -55,7 +55,8 @@ const Signin = () => {
       newErrors.password = "Password must be at least 6 characters";
       valid = false;
     } else if (!/[A-Z]/.test(Signin.password)) {
-      newErrors.password = "Password must contain at least one uppercase letter";
+      newErrors.password =
+        "Password must contain at least one uppercase letter";
       valid = false;
     } else if (!/[0-9]/.test(Signin.password)) {
       newErrors.password = "Password must contain at least one number";
@@ -101,7 +102,7 @@ const Signin = () => {
         {errors.username && <p className="error">{errors.username} !</p>}
 
         <div className="row">
-          <MdEmail  />
+          <MdEmail />
           <input
             type="email"
             name="email"
@@ -112,20 +113,24 @@ const Signin = () => {
         </div>
         {errors.email && <p className="error">{errors.email} !</p>}
 
-               <div className="row">
-            <FaLock/>
-            <input
-              type={close?'text':'password'}
-              name="password"
-              placeholder="Password"
-              autoComplete="OFF"
-              value={Signin.password}
-              onChange={handleChange}
-            />
-            <span onClick={handleChangetype}>
-            {close?<IoIosEyeOff className="input_icon_eye"/>:<IoIosEye className="input_icon_eye"/>}
-            </span>
-          </div>
+        <div className="row">
+          <FaLock />
+          <input
+            type={close ? "text" : "password"}
+            name="password"
+            placeholder="Password"
+            autoComplete="OFF"
+            value={Signin.password}
+            onChange={handleChange}
+          />
+          <span onClick={handleChangetype}>
+            {close ? (
+              <IoIosEye className="input_icon_eye" />
+            ) : (
+              <IoIosEyeOff className="input_icon_eye" />
+            )}
+          </span>
+        </div>
         {errors.password && <p className="error">{errors.password} !</p>}
 
         <input type="submit" value="Sign Up" className="round" />

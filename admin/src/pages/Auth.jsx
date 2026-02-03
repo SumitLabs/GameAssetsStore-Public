@@ -164,7 +164,7 @@ const Auth = () => {
               onChange={handleChange}
             />
             <span onClick={handleChangetype}>
-            {close?<IoIosEyeOff className="input_icon_eye"/>:<IoIosEye className="input_icon_eye"/>}
+            {close?<IoIosEye className="input_icon_eye"/>:<IoIosEyeOff className="input_icon_eye"/>}
             </span>
           </div>
           {errors.password && <p className="error">{errors.password}</p>}

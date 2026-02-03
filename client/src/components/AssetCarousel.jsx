@@ -16,7 +16,7 @@ const AssetCarousel = ({ data }) => {
       slidesPerView={4}
       loop={true}
       autoplay={{
-        delay: 3000,
+        delay: 2000,
         disableOnInteraction: false,
       }}
       pagination={{ clickable: true }}

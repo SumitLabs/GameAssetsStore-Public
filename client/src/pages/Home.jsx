@@ -11,13 +11,15 @@ import Review from "../components/Review";
 
 const Home = () => {
   let popular_games = [
+    
     {
       title: "2D Featured Creator Bundle-",
       dev: "gamedevmarket",
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+         price: "9",
+      isFree:false,
       img: img01,
       link: "",
     },
@@ -27,27 +29,8 @@ const Home = () => {
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
-      img: img01,
-      link: "",
-    },
-    {
-      title: "2D Featured Creator Bundle-",
-      dev: "gamedevmarket",
-      info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Iste sit magnam inventore recusandae
-            animi rem?`,
-      price: "99",
-      img: img01,
-      link: "",
-    },
-    {
-      title: "2D Featured Creator Bundle-",
-      dev: "gamedevmarket",
-      info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Iste sit magnam inventore recusandae
-            animi rem?`,
-      price: "99",
+         price: "99",
+      isFree:false,
       img: img01,
       link: "",
     },
@@ -57,7 +40,8 @@ const Home = () => {
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+      price: "0",
+      isFree:true,
       img: img01,
       link: "",
     },
@@ -67,7 +51,8 @@ const Home = () => {
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+          price: "0",
+      isFree:true,
       img: img01,
       link: "",
     },
@@ -80,7 +65,8 @@ const Home = () => {
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+      price: "0",
+      isFree:true,
       img: img01,
       link: "",
     },
@@ -91,6 +77,7 @@ const Home = () => {
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
       price: "99",
+      isFree:false,
       img: img01,
       link: "",
     },
@@ -100,7 +87,8 @@ const Home = () => {
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+         price: "9",
+      isFree:false,
       img: img01,
       link: "",
     },
@@ -110,20 +98,44 @@ const Home = () => {
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+         price: "99",
+      isFree:false,
+      img: img01,
+      link: "",
+    },
+        {
+      title: "2D Featured Creator Bundle-",
+      dev: "gamedevmarket",
+      info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Iste sit magnam inventore recusandae
+            animi rem?`,
+      price: "0",
+      isFree:true,
+      img: img01,
+      link: "",
+    },
+        {
+      title: "2D Featured Creator Bundle-",
+      dev: "gamedevmarket",
+      info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Iste sit magnam inventore recusandae
+            animi rem?`,
+          price: "0",
+      isFree:true,
       img: img01,
       link: "",
     },
   ];
 
-  let popular_guis = [
-    {
+  let popular_guis = [ 
+     {
       title: "2D Featured Creator Bundle-",
       dev: "gamedevmarket",
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+      price: "0",
+      isFree:true,
       img: img01,
       link: "",
     },
@@ -134,6 +146,7 @@ const Home = () => {
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
       price: "99",
+      isFree:false,
       img: img01,
       link: "",
     },
@@ -143,7 +156,8 @@ const Home = () => {
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+         price: "9",
+      isFree:false,
       img: img01,
       link: "",
     },
@@ -153,7 +167,30 @@ const Home = () => {
       info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem?`,
-      price: "99",
+         price: "99",
+      isFree:false,
+      img: img01,
+      link: "",
+    },
+        {
+      title: "2D Featured Creator Bundle-",
+      dev: "gamedevmarket",
+      info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Iste sit magnam inventore recusandae
+            animi rem?`,
+      price: "0",
+      isFree:true,
+      img: img01,
+      link: "",
+    },
+        {
+      title: "2D Featured Creator Bundle-",
+      dev: "gamedevmarket",
+      info: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Iste sit magnam inventore recusandae
+            animi rem?`,
+          price: "0",
+      isFree:true,
       img: img01,
       link: "",
     },
