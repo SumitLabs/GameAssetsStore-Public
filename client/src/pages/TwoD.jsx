@@ -163,7 +163,7 @@ const TwoD = () => {
         <section className="assets">
           <Search />
 
-          <div className="assets_grid">
+          <main className="assets_grid">
             {currentAssets.map((item, index) => (
               <Card
                 key={index}
@@ -176,7 +176,7 @@ const TwoD = () => {
                 link={item.link}
               />
             ))}
-          </div>
+          </main>
 
           {/* 🔹 Pagination */}
           <div className="page_navigater">

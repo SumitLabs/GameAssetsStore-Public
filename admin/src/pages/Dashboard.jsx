@@ -4,8 +4,15 @@ import { MdPublishedWithChanges, MdVisibility } from "react-icons/md";
 import { LiaFirstdraft } from "react-icons/lia";
 import { BsFillCollectionFill } from "react-icons/bs";
 import { Table } from "../components/Table";
+import PageNo from "../components/PageNo";
+import { useState } from "react";
+
+/* 🔹 items per page */
+const ITEMS_PER_PAGE = 5;
 
 const Dashboard = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   const assets_count = [
     { title: "Total Assets", number: 232, icon: <BsFillCollectionFill /> },
     { title: "Published Assets", number: 120, icon: <MdPublishedWithChanges /> },
@@ -14,19 +21,119 @@ const Dashboard = () => {
   ];
 
   const recent_uploads = [
-    {
-      thumb: "thumb.png",
-      name: "Low Poly Tree",
-      category: "3D Model",
-      status: "Published",
+  
+      {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, 
+      {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, 
+      {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, 
+      {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, 
+      {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, 
+      {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, 
+      {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, 
+      {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, 
+    
+     {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    }, {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
     },
     {
-      thumb: "thumb2.png",
-      name: "Sci-Fi Gun",
-      category: "Weapon",
-      status: "Draft",
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    },
+    {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    },
+    {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    },
+    {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    },
+    {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    },
+    {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
+    },
+    {
+      thumb: "thumb",
+      name: "name",
+      category: "category",
+      status: "status",
     },
   ];
+
+  /* 🔹 Pagination Logic */
+  const totalPages = Math.ceil(recent_uploads.length / ITEMS_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentAssets = recent_uploads.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE
+  );
 
   return (
     <section className="dashboard">
@@ -45,7 +152,18 @@ const Dashboard = () => {
       {/* RECENT UPLOADS */}
       <div className="recent_uploads round">
         <h3>Recent Uploads</h3>
-        <Table data={recent_uploads} />
+
+        {/* ✅ FIXED HERE */}
+        <Table data={currentAssets} />
+
+        {/* 🔹 Pagination */}
+        <div className="page_navigater">
+          <PageNo
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        </div>
       </div>
     </section>
   );

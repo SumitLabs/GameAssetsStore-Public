@@ -5,13 +5,28 @@
   width: 70px;
   font-weight: 600;
   color: #fff;
-  background-color: var(--secondary-light-color);
   height: 25px;
   border-radius: 6px;
 }
-.transaction_table > tbody > tr > td >.admin_btn{
-background-color: var(--secondary-light-color);
+.status_btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
 }
-.transaction_table > tbody > tr > td >.user_btn{
-    background-color: var(--ternary-color);
+
+
+
+.pending_btn{
+  background: #856404;
+}
+
+.completed_btn{
+  
+  background: #155724;
+}
+
+.download_btn {
+  background: #4f46e5;
+  cursor: pointer;
 }

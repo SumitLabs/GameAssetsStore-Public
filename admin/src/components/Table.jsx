@@ -1,6 +1,6 @@
 import "./table.css";
 
-export const Table = ({ data }) => {
+export const Table = ({ data = [] }) => {
   return (
     <div className="table-wrapper">
       <table className="responsive-table">
@@ -16,11 +16,32 @@ export const Table = ({ data }) => {
 
         <tbody>
           {data.map((item, index) => (
-            <tr key={index}>
-              <td>{item.thumb}</td>
+            <tr key={`${item.name}-${index}`}>
+              {/* Thumbnail as image */}
+              <td className="thumb_cell">
+                <img
+                  src={item.thumb}
+                  alt={item.name}
+                  className="thumb_img"
+                />
+              </td>
+
               <td>{item.name}</td>
               <td>{item.category}</td>
-              <td>{item.status}</td>
+
+              {/* Status Badge */}
+              <td>
+                <span
+                  className={`status ${
+                    item.status.toLowerCase() === "published"
+                      ? "published"
+                      : "draft"
+                  }`}
+                >
+                  {item.status}
+                </span>
+              </td>
+
               <td>-</td>
             </tr>
           ))}

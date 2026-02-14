@@ -1,0 +1,36 @@
+.page_no {
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.page_btn {
+  padding: 8px 14px;
+  background: var(--Primary-light-color);
+  color: var(--text-color);
+  border: 1px solid var(--ternary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page_btn:hover {
+  background: var(--ternary-color);
+}
+
+.page_btn.active {
+  background: var(--ternary-color);
+  font-weight: bold;
+}
+
+.page_btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .page_btn {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}

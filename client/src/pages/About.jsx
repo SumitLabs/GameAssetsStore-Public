@@ -8,7 +8,6 @@ import img05 from "../assets/img05.png";
 import Subscribe from "../components/Subscribe";
 import "./about.css";
 import Review from "../components/Review";
-
 import Title from "../components/Title";
 
 const About = () => {

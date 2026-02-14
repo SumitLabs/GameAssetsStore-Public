@@ -1,5 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --Primary-color: #0b0e13;
+  --Primary-light-color: #1c1d20;
+  --secondary-color: #17591c;
+  --secondary-light-color: #2a8c30;
+  --ternary-color: #f00707;
+  --ternary-dark-color: #7a0202;
+  --text-color: #fff;
+  --text-color-secondary:#737980;
+  --overlay-color:rgba(255, 255, 0, 0.3);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,24 +26,14 @@ body{
   background-color: var(--Primary-color);
   color: var(--text-color);
 }
-:root {
-  --Primary-color: #0b0e13;
-  --Primary-light-color: #1c1d20;
-  --secondary-color: #17591c;
-  --secondary-light-color: #2a8c30;
-  --ternary-color: #f00707;
-  --ternary-dark-color: #7a0202;
-  --text-color: #fff;
-  --text-color-secondary:#737980;
-  --overlay-color:rgba(255, 255, 0, 0.3);
-}
+
 
 ::-webkit-scrollbar {
   width: 8px;
   background: var(--Primary-light-color) !important;
 }
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px rgb(138, 137, 137);
+  box-shadow: inset 0 0 5px var(--text-color-secondary);
   -webkit-border-radius: 10px !important;
   border-radius: 10px !important;
 }
@@ -46,7 +49,7 @@ body{
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  background: #888;
+  background: var(--text-color-secondary);
   border-radius: 6px;
 }
 

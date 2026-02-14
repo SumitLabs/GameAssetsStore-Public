@@ -5,3 +5,6 @@
   background-color: var(--Primary-light-color);
   padding: 12px;
 }
+.assets>.upload>.table-wrapper{
+  height: 70vh !important;
+}

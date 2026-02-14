@@ -3,7 +3,7 @@
 }
 
 .recent_uploads{
-  margin: 60px 0;
+  margin-top: 60px;
   padding: 9px;
   width: 90%;
   background-color: var(--Primary-light-color);

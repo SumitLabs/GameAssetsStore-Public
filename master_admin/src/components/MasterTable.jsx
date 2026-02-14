@@ -1,6 +1,6 @@
 import './mastertable.css'
 
-const MasterTable = ({data}) => {
+const MasterTable = ({ data = [] }) => {
   return (
     <div className="table-wrapper">
       <table className="responsive-table master_table">

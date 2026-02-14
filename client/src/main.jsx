@@ -1,17 +1,21 @@
+import { lazy, Suspense } from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "./layout";
-import { ErrorPage } from "./ErrorPage";
-import Contact from "./pages/contact";
-import Home from "./pages/Home";
-import Gui from "./pages/Gui";
-import Music from "./pages/Music";
-import Sound from "./pages/Sound";
-import ThreeD from "./pages/ThreeD";
-import TwoD from "./pages/TwoD";
-import About from "./pages/About"
-import Product from "./pages/Product";
+const Layout = lazy(() => import("./layout"));
+const Loading = lazy(() => import("./loader"));
+const { ErrorPage } = lazy(() => import("./ErrorPage"));
+const Contact = lazy(() => import("./pages/contact"));
+const Home = lazy(() => import("./pages/Home"));
+const Gui = lazy(() => import("./pages/Gui"));
+const Music = lazy(() => import("./pages/Music"));
+const Sound = lazy(() => import("./pages/Sound"));
+const ThreeD = lazy(() => import("./pages/ThreeD"));
+const TwoD = lazy(() => import("./pages/TwoD"));
+const About = lazy(() => import("./pages/About"));
+const News = lazy(() => import("./pages/News"));
+const Product = lazy(() => import("./pages/Product"));
+const Blog = lazy(() => import("./pages/Blog"));
 import "./index.css";
 import "./utilty.css";
 
@@ -50,18 +54,28 @@ const router = createBrowserRouter([
         element: <TwoD />,
       },
       {
-        path:"/about",
-        element:<About/>,
+        path: "/about",
+        element: <About />,
       },
       {
-        path:"/product/:id",
-        element:<Product/>,
-      }
+        path: "/news",
+        element: <News />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+      {
+        path: "/product/:id",
+        element: <Product />,
+      },
     ],
   },
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+    <Suspense fallback={<Loading />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  </StrictMode>,
 );
