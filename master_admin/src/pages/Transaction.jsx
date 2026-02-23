@@ -4,7 +4,7 @@ import { TransactionTable } from "../components/TransactionTable";
 import PageNo from "../components/PageNo";
 
 /* 🔹 Items per page */
-const ITEMS_PER_PAGE = 2;
+const ITEMS_PER_PAGE = 8;
 
 export const Transaction = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,19 +18,27 @@ export const Transaction = () => {
       status: "Completed",
     },
     {
-      transaction: "956NGMNLC",
+      transaction: "M495MN664",
       user: "sumit",
       email: "sumit.@gmail.com",
       amount: 94,
       status: "Completed",
     },
     {
-      transaction: "0483MNMF",
+      transaction: "M495MN664",
       user: "sumit",
       email: "sumit.@gmail.com",
       amount: 94,
       status: "Completed",
     },
+    {
+      transaction: "M495MN664",
+      user: "sumit",
+      email: "sumit.@gmail.com",
+      amount: 94,
+      status: "Completed",
+    },
+    
     {
       transaction: "7845NMKFD",
       user: "sumit",
@@ -45,6 +53,56 @@ export const Transaction = () => {
       amount: 75,
       status: "Completed",
     },
+    {
+      transaction: "3456LMNFD",
+      user: "sumit",
+      email: "sumit.@gmail.com",
+      amount: 75,
+      status: "Completed",
+    },
+    {
+      transaction: "3456LMNFD",
+      user: "sumit",
+      email: "sumit.@gmail.com",
+      amount: 75,
+      status: "Completed",
+    },
+    {
+      transaction: "3456LMNFD",
+      user: "sumit",
+      email: "sumit.@gmail.com",
+      amount: 75,
+      status: "Completed",
+    },
+    {
+      transaction: "3456LMNFD",
+      user: "sumit",
+      email: "sumit.@gmail.com",
+      amount: 75,
+      status: "Completed",
+    },
+    {
+      transaction: "3456LMNFD",
+      user: "sumit",
+      email: "sumit.@gmail.com",
+      amount: 75,
+      status: "Completed",
+    },
+    {
+      transaction: "3456LMNFD",
+      user: "sumit",
+      email: "sumit.@gmail.com",
+      amount: 75,
+      status: "Completed",
+    },
+    {
+      transaction: "3456LMNFD",
+      user: "sumit",
+      email: "sumit.@gmail.com",
+      amount: 75,
+      status: "Completed",
+    },
+    
   ];
 
   /* ✅ Pagination Logic */

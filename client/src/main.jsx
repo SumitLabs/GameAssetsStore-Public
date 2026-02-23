@@ -16,6 +16,7 @@ const About = lazy(() => import("./pages/About"));
 const News = lazy(() => import("./pages/News"));
 const Product = lazy(() => import("./pages/Product"));
 const Blog = lazy(() => import("./pages/Blog"));
+const Article = lazy(()=> import("./pages/Article"))
 import "./index.css";
 import "./utilty.css";
 
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <Product />,
       },
+      {
+        path:"/article/:id",
+        element:<Article/>
+      }
     ],
   },
 ]);

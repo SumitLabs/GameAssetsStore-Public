@@ -52,7 +52,7 @@ const News = () => {
       para: `Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Iste sit magnam inventore recusandae
             animi rem? `,
-      author: "Sumit Kumar Sharma",
+      author: "Sumit Sharma",
       date: " April 12",
       imgHeight: 210,
       layout: "flex_box",
