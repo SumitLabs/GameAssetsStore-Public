@@ -9,7 +9,7 @@ const Hero = () => {
         <p>Your ultimate game asset marketplace for 2D, 3D and more.</p>
         <div className="my-24 flex_box btn_f w_100">
           <div className="btn btn_lg flex_box align_center justify_center">
-            Purchase Game
+            Purchase Assets
           </div>
           <div className="btn_secondary ml-24 btn_lg flex_box align_center justify_center">
             View More

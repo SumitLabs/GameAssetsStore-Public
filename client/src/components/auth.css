@@ -96,6 +96,80 @@ left: 1%;
 .auth_mobile_toggle{
   display: none;
 }
+
+.profile-upload{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.profile-preview{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid #444;
+  margin-bottom:10px;
+}
+
+.profile-input{
+  color:white;
+}
+
+/* PROFILE UPLOAD */
+
+.profile-upload{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-bottom:25px;
+}
+.profile-upload{
+  position: relative;
+  height: 120px;
+}
+.avatar-wrapper{
+  position:absolute;
+  right: 50%;
+}
+
+.avatar-img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #444;
+  background:#111;
+}
+
+/* edit button */
+
+.avatar-edit{
+  position:absolute;
+  bottom:0;
+  right:0;
+  width:32px;
+  height:32px;
+  background:#ff2d2d;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:white;
+  font-size:14px;
+  border:2px solid #222;
+  transition:0.3s;
+}
+
+.avatar-edit:hover{
+  transform:scale(1.1);
+}
+
+.avatar-edit input{
+  display:none;
+}
 @media only screen and (max-width: 768px){
 .left_auth p {
     padding: 23px 0px;
@@ -154,3 +228,5 @@ margin-top:90px ;
     width: 100%;
 }
 }
+
+

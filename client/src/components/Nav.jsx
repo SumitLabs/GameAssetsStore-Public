@@ -29,7 +29,7 @@ const Nav = () => {
 
   const [showAuth, setAuth] = useState(false);
   const closeAuth = () => setAuth(false);
-  const [sign, setSign] = useState("Sign Up");
+  const [sign, setSign] = useState("Sign In");
 
   useEffect(() => {
     if (showAuth) {
@@ -101,7 +101,7 @@ const Nav = () => {
                 )}
               </div>
               <div className="auth_body ">
-                {sign === "Sign In" ? <Signin /> : <Signup />}
+                {sign === "Sign Up" ? <Signin /> : <Signup />}
               </div>
               <div className="auth_mobile_toggle">
                 {sign === "Sign In" ? (

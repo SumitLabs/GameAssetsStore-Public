@@ -4,9 +4,28 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
+import { GrEdit } from "react-icons/gr";
+import Avatar from "../assets/avatar.jpg";
 const Auth = () => {
   const [register, setRegister] = useState(false);
   const [close, setClose] = useState(true);
+const [profileImage, setProfileImage] = useState(Avatar);
+
+  const handleImageChange = (e) => {
+
+    const file = e.target.files[0];
+
+    if (file) {
+
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setProfileImage(reader.result);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
 
   let handleChangetype = () => {
     setClose(!close);
@@ -141,6 +160,37 @@ const Auth = () => {
         </div>
         <form onSubmit={handleSubmit} className="auth_form">
           {/* Username – ONLY for Sign Up */}
+
+          
+       {register &&
+           (<div className="profile-upload">
+
+          <div className="avatar-wrapper">
+
+            <img
+              src={profileImage}
+              alt="avatar"
+              className="avatar-img"
+            />
+
+            <label htmlFor="avatarInput" className="avatar-edit">
+              <GrEdit />
+            </label>
+
+            <input
+              id="avatarInput"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              hidden
+              required="true"
+            />
+
+          </div>
+
+        </div>)}
+
+
           {register && (
             <>
               <div className="row">

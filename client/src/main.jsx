@@ -16,9 +16,11 @@ const About = lazy(() => import("./pages/About"));
 const News = lazy(() => import("./pages/News"));
 const Product = lazy(() => import("./pages/Product"));
 const Blog = lazy(() => import("./pages/Blog"));
-const Article = lazy(()=> import("./pages/Article"))
+const Article = lazy(() => import("./pages/Article"));
 import "./index.css";
 import "./utilty.css";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const router = createBrowserRouter([
   {
@@ -71,16 +73,18 @@ const router = createBrowserRouter([
         element: <Product />,
       },
       {
-        path:"/article/:id",
-        element:<Article/>
-      }
+        path: "/article/:id",
+        element: <Article />,
+      },
     ],
   },
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Suspense fallback={<Loading />}>
-      <RouterProvider router={router} />
-    </Suspense>
+    <Provider store={store}>
+      <Suspense fallback={<Loading />}>
+        <RouterProvider router={router} />
+      </Suspense>
+    </Provider>
   </StrictMode>,
 );

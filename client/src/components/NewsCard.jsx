@@ -1,6 +1,6 @@
 import "./newscard.css";
 import { Link } from "react-router-dom";
-const NewsCard = ({ img, title, para, author, date, imgHeight, layout }) => {
+const NewsCard = ({ img, title, para, author, date, imgHeight, layout, link }) => {
   return (
     <div
       className={layout}
@@ -24,7 +24,7 @@ const NewsCard = ({ img, title, para, author, date, imgHeight, layout }) => {
             <li>{date}</li>
           </ul>
           <div className="news_link">
-            <Link to="" className="round">
+            <Link to={link} target="_blank" className="round">
               Read More
             </Link>
           </div>

@@ -11,7 +11,7 @@ const Loader = () => {
 
     const animate = (timestamp) => {
       if (!start) start = timestamp;
-      const elapsed = timestamp - start;
+      const elapsed = timestamp-start;
 
       const percent = Math.min((elapsed / duration) * 100, 100);
       setProgress(Math.floor(percent));

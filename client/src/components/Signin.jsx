@@ -1,5 +1,4 @@
 import { MdEmail } from "react-icons/md";
-import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
@@ -12,53 +11,39 @@ const Signin = () => {
   let handleChangetype = () => {
     setClose(!close);
   };
-  const [Signin, setSignin] = useState({
-    username: "",
+  const [Signup, setSignup] = useState({
     email: "",
     password: "",
   });
 
-  const [errors, setErrors] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const [errors, setErrors] = useState({ email: "", password: "" });
 
-  // ✅ Validation function
+  // Validation function
   const validation = () => {
     let valid = true;
-    let newErrors = { username: "", email: "", password: "" };
-
-    // Username validation
-    if (!Signin.username.trim()) {
-      newErrors.username = "Username is required";
-      valid = false;
-    } else if (Signin.username.length < 3) {
-      newErrors.username = "Username must be at least 3 characters long";
-      valid = false;
-    }
+    let newErrors = { email: "", password: "" };
 
     // Email validation
-    if (!Signin.email.trim()) {
+    if (!Signup.email) {
       newErrors.email = "Email is required";
       valid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Signin.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Signup.email)) {
       newErrors.email = "Please enter a valid email address";
       valid = false;
     }
 
     // Password validation
-    if (!Signin.password.trim()) {
+    if (!Signup.password) {
       newErrors.password = "Password is required";
       valid = false;
-    } else if (Signin.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
+    } else if (Signup.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long";
       valid = false;
-    } else if (!/[A-Z]/.test(Signin.password)) {
+    } else if (!/[A-Z]/.test(Signup.password)) {
       newErrors.password =
         "Password must contain at least one uppercase letter";
       valid = false;
-    } else if (!/[0-9]/.test(Signin.password)) {
+    } else if (!/[0-9]/.test(Signup.password)) {
       newErrors.password = "Password must contain at least one number";
       valid = false;
     }
@@ -68,74 +53,59 @@ const Signin = () => {
   };
 
   const handleChange = (e) => {
-    setSignin({ ...Signin, [e.target.name]: e.target.value });
+    setSignup({ ...Signup, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validation()) return; // Stop if validation fails
+    if (!validation()) return; // stop submission if validation fails
 
     try {
-      console.log(Signin.username, Signin.email, Signin.password);
-      alert("Signin successful!");
-      setSignin({ username: "", email: "", password: "" });
-      setErrors({ username: "", email: "", password: "" });
+      console.log(Signup.email, Signup.password);
+      setSignup({ email: "", password: "" });
+      alert("Signup successful!");
     } catch (err) {
-      alert(err.response?.data?.message || "Signin failed");
+      alert(err.response?.data?.message || "Signup failed");
     }
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className="auth_form">
-        <div className="row">
-          <FaUser className="input_icon" />
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={Signin.username}
-            onChange={handleChange}
-          />
-        </div>
-        {errors.username && <p className="error">{errors.username} !</p>}
+    <form onSubmit={handleSubmit} className="auth_form">
+      <div className="row">
+        <MdEmail />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={Signup.email}
+          onChange={handleChange}
+        />
+      </div>
+      {errors.email && <p className="error">{errors.email} !</p>}
 
-        <div className="row">
-          <MdEmail />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={Signin.email}
-            onChange={handleChange}
-          />
-        </div>
-        {errors.email && <p className="error">{errors.email} !</p>}
+      <div className="row">
+        <FaLock />
+        <input
+          type={close ? "text" : "password"}
+          name="password"
+          placeholder="Password"
+          autoComplete="OFF"
+          value={Signup.password}
+          onChange={handleChange}
+        />
+        <span onClick={handleChangetype}>
+          {close ? (
+            <IoIosEye className="input_icon_eye" />
+          ) : (
+            <IoIosEyeOff className="input_icon_eye" />
+          )}
+        </span>
+      </div>
+      {errors.password && <p className="error">{errors.password} !</p>}
 
-        <div className="row">
-          <FaLock />
-          <input
-            type={close ? "text" : "password"}
-            name="password"
-            placeholder="Password"
-            autoComplete="OFF"
-            value={Signin.password}
-            onChange={handleChange}
-          />
-          <span onClick={handleChangetype}>
-            {close ? (
-              <IoIosEye className="input_icon_eye" />
-            ) : (
-              <IoIosEyeOff className="input_icon_eye" />
-            )}
-          </span>
-        </div>
-        {errors.password && <p className="error">{errors.password} !</p>}
-
-        <input type="submit" value="Sign Up" className="round" />
-      </form>
-    </>
+      <input type="submit" value="Sign In" className="round" />
+    </form>
   );
 };
 

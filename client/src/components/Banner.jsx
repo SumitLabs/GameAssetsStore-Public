@@ -1,5 +1,5 @@
 import "./banner.css"
-// import bannerImg from "../assets/test.jpg"
+import Poster from '../assets/poster.jpg'
 const Banner = () => {
   
   return (
@@ -13,7 +13,7 @@ const Banner = () => {
           <button className="btn">SHOP Now</button>
        </div>
        <div className="ad_r">
-        {/* <img src={bannerImg} alt="" className="round"/> */}
+        <img src={Poster} alt="" className="round"/>
        </div>
       </div>
     </div>

@@ -6,12 +6,12 @@
 }
 
 .article_container {
-     position: relative;
-  max-width: 850px;
-  width: 100%;
+  position: relative;
+  max-width: 70%;
   background: #111;
   border-radius: 18px;
   overflow: hidden;
+  margin-left: 50px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
@@ -92,4 +92,19 @@
     background-color: var(--Primary-light-color);
     color: var(--text-color);
     padding:8px;
+}
+.adv{
+  margin-left: 30px;
+  
+  width: 30%;
+}
+
+@media only screen and (max-width: 768px) {
+  .article_container {
+    max-width: 100%;
+    margin-left: 25px;
+  }
+  .adv{
+    display: none;
+  }
 }

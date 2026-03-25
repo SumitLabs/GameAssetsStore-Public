@@ -2,14 +2,17 @@ import "./article.css";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaTelegramPlane } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Poster from '../assets/poster.jpg'
+import TrandingCard from "../components/TrandingCard";
+
 const Article = () => {
   return (
-    <div className="article_page flex_box justify_center">
-      <div className="article_container">
-        {/* Header Image */}
+    <div className="article_page flex_box ">
+      <div className="article_container  ">
+
         <div className="article_header">
           <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+            src={Poster}
             alt="Article Header"
           />
         </div>
@@ -22,8 +25,7 @@ const Article = () => {
             <span>By Sarah Johnson</span>
             <span>•</span>
             <span>Feb 6, 2026</span>
-            <span>•</span>
-            <span>8 min read</span>
+           
           </div>
 
           <p>
@@ -54,11 +56,18 @@ const Article = () => {
       </div>
     
         <ul className="share">
-          <li><Link><IoLogoWhatsapp/></Link></li>
-          <li><Link><FaTelegramPlane/></Link></li>
+          <li><Link to=''><IoLogoWhatsapp/></Link></li>
+          <li><Link to=''><FaTelegramPlane/></Link></li>
+          
         </ul>
-      
+       <div className="adv flex_box justify_center">
+  <div className="w_display">
+            <TrandingCard />
+          </div>
+
+       </div>
     </div>
+   
   );
 };
 

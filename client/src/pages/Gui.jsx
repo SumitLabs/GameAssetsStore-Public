@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import "./asset.css";
 import { Link } from "react-router-dom";
@@ -13,11 +13,11 @@ import Search from "../components/Search";
 import Card from "../components/Card";
 import PageNo from "../components/PageNo";
 
-/* 🔹 items per page */
 const ITEMS_PER_PAGE = 6;
 
 const Gui = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
 
   /* 🔹 Asset Types */
   const types = [
@@ -39,70 +39,6 @@ const Gui = () => {
       img: img01,
       link: "",
     },
-     {
-      title: "2D Featured Creator Bundle",
-      dev: "gamedevmarket",
-      info: "High quality 3D assets for modern games.",
-      price: "0",
-      isFree: true,
-      img: img01,
-      link: "",
-    },
-     {
-      title: "2D Featured Creator Bundle",
-      dev: "gamedevmarket",
-      info: "High quality 3D assets for modern games.",
-      price: "0",
-      isFree: true,
-      img: img01,
-      link: "",
-    },
-     {
-      title: "2D Featured Creator Bundle",
-      dev: "gamedevmarket",
-      info: "High quality 3D assets for modern games.",
-      price: "0",
-      isFree: true,
-      img: img01,
-      link: "",
-    },
-     {
-      title: "2D Featured Creator Bundle",
-      dev: "gamedevmarket",
-      info: "High quality 3D assets for modern games.",
-      price: "0",
-      isFree: true,
-      img: img01,
-      link: "",
-    },
-     {
-      title: "2D Featured Creator Bundle",
-      dev: "gamedevmarket",
-      info: "High quality 3D assets for modern games.",
-      price: "0",
-      isFree: true,
-      img: img01,
-      link: "",
-    },
-     {
-      title: "2D Featured Creator Bundle",
-      dev: "gamedevmarket",
-      info: "High quality 3D assets for modern games.",
-      price: "0",
-      isFree: true,
-      img: img01,
-      link: "",
-    },
-     {
-      title: "2D Featured Creator Bundle",
-      dev: "gamedevmarket",
-      info: "High quality 3D assets for modern games.",
-      price: "0",
-      isFree: true,
-      img: img01,
-      link: "",
-    },
-
     {
       title: "Environment Pack",
       dev: "EpicDev",
@@ -150,11 +86,23 @@ const Gui = () => {
     },
   ];
 
-  /* 🔹 Pagination Logic */
-  const totalPages = Math.ceil(gui_asset.length / ITEMS_PER_PAGE);
+  /* 🔍 Search Filter */
+  const filteredAssets = gui_asset.filter((item) =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.dev.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.info.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  /* 🔹 Reset page on search */
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
+
+  /* 🔹 Pagination */
+  const totalPages = Math.ceil(filteredAssets.length / ITEMS_PER_PAGE);
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentAssets = gui_asset.slice(
+  const currentAssets = filteredAssets.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
@@ -188,21 +136,27 @@ const Gui = () => {
         <Filter />
 
         <section className="assets">
-          <Search />
+          {/* 🔍 Search */}
+          <Search onSearch={setSearchQuery} />
 
+          {/* 🔹 Assets Grid */}
           <main className="assets_grid">
-            {currentAssets.map((item, index) => (
-              <Card
-                key={index}
-                title={item.title}
-                dev={item.dev}
-                info={item.info}
-                price={item.price}
-                isFree={item.isFree}
-                img={item.img}
-                link={item.link}
-              />
-            ))}
+            {currentAssets.length > 0 ? (
+              currentAssets.map((item, index) => (
+                <Card
+                  key={index}
+                  title={item.title}
+                  dev={item.dev}
+                  info={item.info}
+                  price={item.price}
+                  isFree={item.isFree}
+                  img={item.img}
+                  link={item.link}
+                />
+              ))
+            ) : (
+              <p>No results found 😢</p>
+            )}
           </main>
 
           {/* 🔹 Pagination */}
@@ -220,5 +174,3 @@ const Gui = () => {
 };
 
 export default Gui;
-
- 
