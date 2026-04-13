@@ -3,8 +3,10 @@ import { FaSearch } from "react-icons/fa";
 import Avatar from "../assets/avatar.jpg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
-
+import { useTableSearch } from "../context/SearchContext";
 const Header = ({ sidebarOpen, setSidebarOpen }) => {
+  const { searchQuery, setSearchQuery } = useTableSearch();
+
   return (
     <header className="flex_box justify_between align_center">
       <div
@@ -15,8 +17,18 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
       </div>
 
       <div className="search">
-        <form>
-          <input type="search" placeholder="Search" className="round" />
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          role="search"
+        >
+          <input
+            type="search"
+            placeholder="Search table on this page"
+            className="round"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            aria-label="Search current table"
+          />
           <FaSearch />
         </form>
       </div>

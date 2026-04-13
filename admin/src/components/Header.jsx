@@ -4,26 +4,19 @@ import Avatar from "../assets/avatar.jpg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useSearchQuery } from "../context/SearchContext";
 
-const Header = ({ sidebarOpen, setSidebarOpen, onSearch }) => {
+const Header = ({ sidebarOpen, setSidebarOpen }) => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const [query, setQuery] = useState("");
+  const { searchQuery, setSearchQuery } = useSearchQuery();
 
   const isProfilePage =
     location.pathname === "/dashboard/profile" ||
     location.pathname === "/dashboard/upload";
 
   const handleChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-
-    // trigger parent search
-    if (onSearch) {
-      onSearch(value);
-    }
+    setSearchQuery(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -49,10 +42,11 @@ const Header = ({ sidebarOpen, setSidebarOpen, onSearch }) => {
               type="search"
               placeholder="Search Assets..."
               className="round"
-              value={query}
+              value={searchQuery ?? ""}
               onChange={handleChange}
+              autoComplete="off"
             />
-            <FaSearch />
+            <FaSearch aria-hidden className="search_icon" />
           </form>
         </div>
       )}

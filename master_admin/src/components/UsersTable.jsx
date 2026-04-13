@@ -1,5 +1,6 @@
 import "./table.css";
 import './usertable.css'
+
 export const UserTable = ({ data }) => {
   return (
     <div className="table-wrapper">

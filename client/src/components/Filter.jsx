@@ -13,7 +13,7 @@ const Filter = () => {
         </div>
 
         <div className="filter_options flex_box flex_col">
-          {["All","Characters","Environments","GUI","Textures & Materials"].map((item) => (
+          {["All","Characters","Environments","Textures & Materials"].map((item) => (
             <label key={item} className="check_row">
               <input type="checkbox" />
               <span>{item}</span>
@@ -29,11 +29,17 @@ const Filter = () => {
           
         </div>
 
-        <input type="range" min="0" max="100" className="w_full" />
+        <input type="range" min="0" max="500" className="w_full" />
 
         <div className="flex_box justify_between text_sm mt_8">
           <span>$10</span>
-          <span>$10–$75</span>
+          <span>$500</span>
+        </div>
+        <div className="mt-12">
+         <label className="check_row">
+            <input type="checkbox"/>
+            <span>Free</span>
+          </label>
         </div>
       </div>
 

@@ -40,6 +40,13 @@
     min-width: 600px; /* Forces horizontal scroll */
   }
 }
+
+.table_empty {
+  text-align: center;
+  color: var(--text-color-secondary, #888);
+  padding: 24px 12px;
+}
+
 /* Status Badge */
 .status {
   padding: 5px 12px;

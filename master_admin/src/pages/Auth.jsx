@@ -5,6 +5,7 @@ import { useState } from "react";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { GrEdit } from "react-icons/gr";
+
 import Avatar from "../assets/avatar.jpg";
 const Auth = () => {
   const [register, setRegister] = useState(false);

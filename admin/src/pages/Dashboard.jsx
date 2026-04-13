@@ -5,13 +5,24 @@ import { LiaFirstdraft } from "react-icons/lia";
 import { BsFillCollectionFill } from "react-icons/bs";
 import { Table } from "../components/Table";
 import PageNo from "../components/PageNo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchQuery } from "../context/SearchContext";
 
 /* 🔹 items per page */
 const ITEMS_PER_PAGE = 5;
 
+const CATEGORIES = ["Furniture", "Lighting", "Decor", "Electronics"];
+
+const recent_uploads = Array.from({ length: 15 }, (_, i) => ({
+  thumb: "thumb",
+  name: `Upload ${i + 1}`,
+  category: CATEGORIES[i % CATEGORIES.length],
+  status: i % 2 === 0 ? "Published" : "Draft",
+}));
+
 const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const { searchQuery } = useSearchQuery();
 
   const assets_count = [
     { title: "Total Assets", number: 232, icon: <BsFillCollectionFill /> },
@@ -20,117 +31,25 @@ const Dashboard = () => {
     { title: "Visitor", number: 1450, icon: <MdVisibility /> },
   ];
 
-  const recent_uploads = [
-  
-      {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, 
-      {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, 
-      {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, 
-      {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, 
-      {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, 
-      {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, 
-      {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, 
-      {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, 
-    
-     {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    }, {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    },
-    {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    },
-    {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    },
-    {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    },
-    {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    },
-    {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    },
-    {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    },
-    {
-      thumb: "thumb",
-      name: "name",
-      category: "category",
-      status: "status",
-    },
-  ];
+  const trimmedQuery = searchQuery.trim().toLowerCase();
+  const filteredUploads = !trimmedQuery
+    ? recent_uploads
+    : recent_uploads.filter((item) =>
+        [item.name, item.category, item.status]
+          .join(" ")
+          .toLowerCase()
+          .includes(trimmedQuery)
+      );
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
 
   /* 🔹 Pagination Logic */
-  const totalPages = Math.ceil(recent_uploads.length / ITEMS_PER_PAGE);
+  const totalPages = Math.max(1, Math.ceil(filteredUploads.length / ITEMS_PER_PAGE));
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentAssets = recent_uploads.slice(
+  const currentAssets = filteredUploads.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );

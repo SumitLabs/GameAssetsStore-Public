@@ -15,7 +15,14 @@ export const Table = ({ data = [] }) => {
         </thead>
 
         <tbody>
-          {data.map((item, index) => (
+          {data.length === 0 ? (
+            <tr>
+              <td colSpan={5} className="table_empty">
+                No rows match your search.
+              </td>
+            </tr>
+          ) : (
+          data.map((item, index) => (
             <tr key={`${item.name}-${index}`}>
               {/* Thumbnail as image */}
               <td className="thumb_cell">
@@ -44,7 +51,8 @@ export const Table = ({ data = [] }) => {
 
               <td>-</td>
             </tr>
-          ))}
+          ))
+          )}
         </tbody>
       </table>
     </div>

@@ -1,23 +1,27 @@
 import { useState } from "react";
 import SideBar from "./components/SideBar";
 import Header from "./components/Header";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import { SearchProvider } from "./context/SearchContext";
 
 const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { pathname } = useLocation();
 
   return (
-    <div className="flex_box">
-      <SideBar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+    <SearchProvider key={pathname}>
+      <div className="flex_box h_full_vh">
+        <SideBar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      <div className="outlet">
-        <Header
-          sidebarOpen={sidebarOpen}
-          setSidebarOpen={setSidebarOpen}
-        />
-        <Outlet />
+        <div className="outlet">
+          <Header
+            sidebarOpen={sidebarOpen}
+            setSidebarOpen={setSidebarOpen}
+          />
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </SearchProvider>
   );
 };
 
