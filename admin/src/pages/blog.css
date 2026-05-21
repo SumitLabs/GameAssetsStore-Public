@@ -1,0 +1,108 @@
+.create_blog {
+  margin: 14px;
+  background-color: var(--Primary-light-color);
+  padding: 23px;
+}
+.poster {
+  margin: 0px auto;
+  background-color: var(--Primary-color);
+  height: 90px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+   
+}
+.poster>svg{
+    font-size: 50px;
+}
+.blog_inputs {
+  position: relative;
+  margin-top: 19px;
+}
+.blog_inputs > input[type="file"] {
+  position: absolute;
+  top: -130px;
+  border-radius: 6px;
+  /* background-color: aqua; */
+  left: 46.3%;
+  cursor: pointer !important;
+  opacity: 0;
+  height: 90px;
+  width: 90px;
+}
+.blog_inputs>input[type="text"]{
+    background-color: var(--Primary-color);
+    border: none;
+    margin: 6px 0;
+      border-radius: 6px;
+    height: 38px;
+    color: var(--text-color);
+    outline: none;
+    padding: 0 6px;
+}
+
+.blog_inputs>textarea{
+       border-radius: 6px;
+           color: var(--text-color);
+               background-color: var(--Primary-color);
+    outline: none;
+    padding: 6px;
+     margin: 6px 0;
+    height: 240px;
+    border: none;
+}
+.blog_inputs>input[type="submit"]{
+   
+    margin-top: 10px;
+    height: 30px;
+    color: var(--Primary-color);
+          border-radius: 2px;
+          outline: none;
+          border: none;
+          font-weight:bolder ;
+        
+          cursor: pointer;
+}
+.blog_inputs>label{
+    margin-top: 6px;
+    font-size: .8em;
+}
+
+
+/* Main editor container */
+.custom_editor .jodit-container {
+  background: #000 !important;
+  border: 1px solid #222 !important;
+}
+
+/* Toolbar */
+.custom_editor .jodit-toolbar__box {
+  background: #111 !important;
+  
+}
+
+/* Editing area */
+.custom_editor .jodit-wysiwyg {
+  color:var(--Primary-color)
+}
+
+/* Placeholder text */
+.custom_editor .jodit-wysiwyg::placeholder {
+  color: #888 !important;
+}
+
+/* Icons */
+.custom_editor .jodit-toolbar-button__button {
+  color: var(--text-color) !important;
+}
+
+/* Status bar */
+.custom_editor .jodit-status-bar {
+  background: var(--Primary-light-color) !important;
+  color: var(--text-color) !important;
+}
+.jodit-status-bar-link{
+  display: none;
+}

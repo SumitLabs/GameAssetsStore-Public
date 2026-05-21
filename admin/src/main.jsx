@@ -7,7 +7,9 @@ import Layout from "./layout";
 import Dashboard from "./pages/Dashboard";
 import Upload from "./pages/Upload";
 import Assets from "./pages/Assets";
-import Profile from "./pages/Profile"
+import Profile from "./pages/Profile";
+import Blog from "./pages/Blog";
+import BlogList from "./pages/BlogList"
 import "./index.css";
 import "./utilty.css";
 
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
           {
             path:"/dashboard/profile",
             element:<Profile/>
+          },
+          {
+            path:"/dashboard/blog/create",
+            element:<Blog/>
+          },
+          {
+            path:"/dashboard/all/blog",
+            element:<BlogList/>
           }
         ],
       },

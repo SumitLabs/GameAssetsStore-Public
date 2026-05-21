@@ -1,7 +1,7 @@
 import "./sidebar.css";
 import { Link } from "react-router-dom";
-import { MdDashboard,MdViewInAr } from "react-icons/md";
-import { FaFileDownload} from "react-icons/fa";
+import { MdDashboard, MdViewInAr } from "react-icons/md";
+import { FaFileDownload } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
 import { CgLogOut } from "react-icons/cg";
 
@@ -16,6 +16,7 @@ const SideBar = ({ sidebarOpen, setSidebarOpen }) => {
 
       <nav>
         <ul onClick={() => setSidebarOpen(false)}>
+          
           <li>
             <Link to="/dashboard" className="flex_box align_center">
               <MdDashboard /> <span>Dashboard</span>
@@ -29,8 +30,20 @@ const SideBar = ({ sidebarOpen, setSidebarOpen }) => {
           </li>
 
           <li>
+            <Link to="/dashboard/blog/create" className="flex_box align_center">
+              <FaFileDownload /> <span>Create Blog</span>
+            </Link>
+          </li>
+
+          <li>
             <Link to="/dashboard/assets" className="flex_box align_center">
               <MdViewInAr /> <span>All Assets</span>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/dashboard/all/blog" className="flex_box align_center">
+              <FaFileDownload /> <span>All Blog</span>
             </Link>
           </li>
 
@@ -39,6 +52,7 @@ const SideBar = ({ sidebarOpen, setSidebarOpen }) => {
               <ImProfile /> <span>Profile</span>
             </Link>
           </li>
+
         </ul>
       </nav>
 

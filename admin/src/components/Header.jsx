@@ -13,7 +13,7 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
 
   const isProfilePage =
     location.pathname === "/dashboard/profile" ||
-    location.pathname === "/dashboard/upload";
+    location.pathname === "/dashboard/upload" || location.pathname === "/dashboard/blog/create";
 
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
