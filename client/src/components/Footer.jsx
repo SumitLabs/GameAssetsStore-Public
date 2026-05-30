@@ -1,4 +1,5 @@
 import "./footer.css";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaTwitter,
@@ -15,8 +16,9 @@ const Footer = () => {
         <div className="footer_col">
           <h4>About NovaAsset</h4>
           <ul>
-            <li>About Us</li>
-            <li>Contact Us</li>
+            <li><Link to ="">About Us</Link></li>
+            <li><Link to="">Contact Us</Link></li>
+            <li>Games</li>
             <li>Audio Assets</li>
             <li>3D Assets</li>
             <li>2D Assets</li>

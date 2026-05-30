@@ -17,6 +17,7 @@ const News = lazy(() => import("./pages/News"));
 const Product = lazy(() => import("./pages/Product"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Article = lazy(() => import("./pages/Article"));
+const Games = lazy(()=>import("./pages/Games"))
 import "./index.css";
 import "./utilty.css";
 import { Provider } from "react-redux";
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
         path: "/article/:id",
         element: <Article />,
       },
+      {
+        path:"/games",
+        element:<Games/>
+      }
     ],
   },
 ]);

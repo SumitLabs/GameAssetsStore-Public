@@ -123,7 +123,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="navbar flex_box align_center justify_evenly">
+    <nav className="navbar flex_box align_center justify_between container">
       <div className="logo">
         <Link to="/">
           <h2>
@@ -172,6 +172,9 @@ const Nav = () => {
         <li>
           <Link to="/gui">GUI Assets</Link>
         </li>
+
+        <li><Link to="/games">Games</Link></li>
+
         <li><Link to="/news">News</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         <li>
